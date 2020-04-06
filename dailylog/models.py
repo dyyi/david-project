@@ -9,3 +9,6 @@ class PrayLog(models.Model):
     pray_start = models.DateTimeField()
     pray_end = models.DateTimeField()
     updated_date = models.DateTimeField(default=timezone.now)
+
+    def __str__(self):
+        return self.author.username + "'s " + str(self.date)
