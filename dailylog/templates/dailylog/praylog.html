@@ -1,3 +1,8 @@
 <html>
-    <p>Hi</p>
+    <head></head>
+    <body>
+        {% for praylog in praylogs %}
+            {{ praylog }} {{ praylog.date }} {{ praylog.pray_start }} {{ praylog.pray_end }} <br/>
+        {% endfor %}
+    </body>
 </html>
