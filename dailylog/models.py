@@ -1,3 +1,8 @@
 from django.db import models
+from django.utils import timezone
 
-# Create your models here.
+class PraryLog(models.Model):
+    author = models.ForeignKey('settings.AUTH_USER_MODEL')
+    pray_start = models.DateTimeField()
+    pray_end = models.DateTimeField()
+    updated_date = models.DataTimeField(default=timezone.now)
