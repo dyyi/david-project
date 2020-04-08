@@ -102,29 +102,42 @@
                   <h4 class="page-title">기도 일지</h4>
                 </div>
               </div>
-            </div>
-            <!-- Page Title Header Ends-->
-            <div class="row">
-              <div class="col-md-12 grid-margin">
-                <div class="card">
-                  <div class="card-body">
-                    <h4 class="card-title mb-0">한국어</h4>
-                    <div class="row">
-                      <div class="col-md-12"></div>
+                <div class="col-md-12">
+                    <div class="page-header-toolbar">
+                    <div class="btn-group toolbar-item" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-secondary"><i class="mdi mdi-chevron-left"></i></button>
+                        <button type="button" class="btn btn-secondary">2020-04-08</button>
+                        <button type="button" class="btn btn-secondary"><i class="mdi mdi-chevron-right"></i></button>
                     </div>
-                  </div>
+                    </div>
                 </div>
-              </div>
             </div>
             <div class="row">
               <div class="col-md-12 grid-margin">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title mb-0 font-weight-semibold">한국어</h4>
+                    <!--<h4 class="card-title mb-0 font-weight-semibold">한국어</h4>-->
                     <div class="d-flex flex-column flex-lg-row">
-                        {% for praylog in praylogs %}
-                        <p>{{ praylog }} {{ praylog.date }} {{ praylog.pray_start }} {{ praylog.pray_end }}</p>
-                        {% endfor %}
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>일자</th>
+                                    <th>목표시간</th>
+                                    <th>기도시간</th>
+                                    <th>달성률</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for praylog in praylogs %}
+                                <tr>
+                                    <td>{{ praylog.date}} </td>
+                                    <td>{{ praylog.start_goal }} ~ {{ praylog.end_goal }}</td>
+                                    <td>{{ praylog.start }} ~ {{ praylog.end }}</td>
+                                    <td>10%</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
                     </div>
                   </div>
                 </div>
@@ -147,12 +160,16 @@
       </div>
       <!-- page-body-wrapper ends -->
     </div>
-    <!--
     <!-- container-scroller -->
     <!-- plugins:js -->
     <script src="{% static 'assets/vendors/js/vendor.bundle.base.js' %}"></script>
     <script src="{% static 'assets/vendors/js/vendor.bundle.addons.js' %}"></script>
-    <!-- endinject -->
+    <!-- endinject -->    
+    <!-- inject:js -->
+    <script src="{% static 'assets/js/shared/off-canvas.js' %}"></script>
+    <script src="{% static 'assets/js/shared/misc.js' %}"></script>
+    <!-- endinject -->    
+
 
   </body>
 </html><html>
