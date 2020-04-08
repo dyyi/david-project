@@ -1,180 +1,68 @@
+{% extends 'davidproject/index.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>The David Project</title>
-    <!-- plugins:css -->
-    <link rel="stylesheet" href="{% static '/assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css' %}">
-    <link rel="stylesheet" href="{% static '/assets/vendors/iconfonts/ionicons/css/ionicons.css' %}">
-    <link rel="stylesheet" href="{% static '/assets/vendors/iconfonts/typicons/src/font/typicons.css' %}">
-    <link rel="stylesheet" href="{% static '/assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css' %}">
-    <link rel="stylesheet" href="{% static '/assets/vendors/css/vendor.bundle.base.css' %}">
-    <link rel="stylesheet" href="{% static '/assets/vendors/css/vendor.bundle.addons.css' %}">
-    <!-- endinject -->
-    <!-- plugin css for this page -->
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <link rel="stylesheet" href="{% static '/assets/css/shared/style.css' %}">
-    <!-- endinject -->
-    <!-- Layout styles -->
-    <link rel="stylesheet" href="{% static '/assets/css/demo_1/style.css' %}">
-    <!-- End Layout styles -->
-    <link rel="shortcut icon" href="{% static '/assets/images/favicon.png' %}" />
-  </head>
-  <body>
-    <div class="container-scroller">
-      <!-- partial:partials/_navbar.html -->
-      <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-          <a class="navbar-brand brand-logo" href="index.html">
-            <img src="{% static '/assets/images/logo.png' %}" alt="logo" style="width:30px; height:30px;" /> &nbsp; David Project</a>
-          <a class="navbar-brand brand-logo-mini" href="index.html">
-            <img src="{% static '/assets/images/logo.png' %}" alt="logo" /> </a>
-        </div>
-        <div class="navbar-menu-wrapper d-flex align-items-center">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item dropdown d-none d-xl-inline-block user-dropdown">
-              <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                <img class="img-xs rounded-circle" src="{% static 'assets/images/faces-clipart/pic-1.png' %}" alt="Profile image"> </a>
-              <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
-                <div class="dropdown-header text-center">
-                  <img class="img-md rounded-circle" src="{% static 'assets/images/faces-clipart/pic-1.png' %}" alt="Profile image">
-                  <p class="mb-1 mt-3 font-weight-semibold">Name Here</p>
-                  <!--<p class="font-weight-light text-muted mb-0">email@email.com</p>-->
-                </div>
-                <a class="dropdown-item">My Profile <span class="badge badge-pill badge-danger">1</span><i class="dropdown-item-icon ti-dashboard"></i></a>
-                <!--
-                <a class="dropdown-item">Messages<i class="dropdown-item-icon ti-comment-alt"></i></a>
-                <a class="dropdown-item">Activity<i class="dropdown-item-icon ti-location-arrow"></i></a>
-                <a class="dropdown-item">FAQ<i class="dropdown-item-icon ti-help-alt"></i></a>
-                -->
-                <a class="dropdown-item">Sign Out<i class="dropdown-item-icon ti-power-off"></i></a>
-              </div>
-            </li>
-          </ul>
-          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-            <span class="mdi mdi-menu"></span>
-          </button>
-        </div>
-      </nav>
-      <!-- partial -->
-      <div class="container-fluid page-body-wrapper">
-        <!-- partial:partials/_sidebar.html -->
-        <nav class="sidebar sidebar-offcanvas" id="sidebar">
-          <ul class="nav">
-            <li class="nav-item nav-profile">
-              <a href="#" class="nav-link">
-                <div class="profile-image">
-                  <img class="img-xs rounded-circle" src="{% static 'assets/images/faces-clipart/pic-1.png' %}" alt="profile image">
-                  <div class="dot-indicator bg-success"></div>
-                </div>
-                <div class="text-wrapper">
-                  <p class="profile-name">이동윤</p>
-                  <p class="designation">2A09셀</p>
-                </div>
-              </a>
-            </li>
-            <li class="nav-item nav-category">Main Menu</li>
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">
-                <i class="menu-icon typcn typcn-document-text"></i>
-                <span class="menu-title">Dashboard</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="praylog">
-                <i class="menu-icon typcn typcn-shopping-bag"></i>
-                <span class="menu-title">기도 일지</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <!-- partial -->
-        <div class="main-panel">
-          <div class="content-wrapper">
-            <!-- Page Title Header Starts-->
-            <div class="row page-title-header">
-              <div class="col-12">
-                <div class="page-header">
-                  <h4 class="page-title">기도 일지</h4>
-                </div>
-              </div>
-                <div class="col-md-12">
-                    <div class="page-header-toolbar">
-                    <div class="btn-group toolbar-item" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-secondary"><i class="mdi mdi-chevron-left"></i></button>
-                        <button type="button" class="btn btn-secondary">2020-04-08</button>
-                        <button type="button" class="btn btn-secondary"><i class="mdi mdi-chevron-right"></i></button>
-                    </div>
-                    </div>
-                </div>
+{% block content %}
+<!-- partial -->
+<div class="main-panel">
+    <div class="content-wrapper">
+    <!-- Page Title Header Starts-->
+    <div class="row page-title-header">
+        <div class="col-12">
+            <div class="page-header">
+                <h4 class="page-title">기도 일지</h4>
             </div>
-            <div class="row">
-              <div class="col-md-12 grid-margin">
-                <div class="card">
-                  <div class="card-body">
-                    <!--<h4 class="card-title mb-0 font-weight-semibold">한국어</h4>-->
-                    <div class="d-flex flex-column flex-lg-row">
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>일자</th>
-                                    <th>목표시간</th>
-                                    <th>기도시간</th>
-                                    <th>달성률</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {% for praylog in praylogs %}
-                                <tr>
-                                    <td>{{ praylog.date}} </td>
-                                    <td>{{ praylog.start_goal }} ~ {{ praylog.end_goal }}</td>
-                                    <td>{{ praylog.start }} ~ {{ praylog.end }}</td>
-                                    <td>10%</td>
-                                </tr>
-                                {% endfor %}
-                            </tbody>
-                        </table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>            
-          </div>
-          <!-- content-wrapper ends -->
-          <!-- partial:partials/_footer.html -->
-          <footer class="footer">
-            <div class="container-fluid clearfix">
-              <!--
-              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2019 <a href="http://www.bootstrapdash.com/" target="_blank">Bootstrapdash</a>. All rights reserved.</span>
-              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i></span>
-              -->
-            </div>
-          </footer>
-          <!-- partial -->
         </div>
-        <!-- main-panel ends -->
-      </div>
-      <!-- page-body-wrapper ends -->
+        <div class="col-md-12">
+            <div class="page-header-toolbar">
+            <div class="btn-group toolbar-item" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary"><i class="mdi mdi-chevron-left"></i></button>
+                <button type="button" class="btn btn-secondary">2020-04-08</button>
+                <button type="button" class="btn btn-secondary"><i class="mdi mdi-chevron-right"></i></button>
+            </div>
+            </div>
+        </div>
     </div>
-    <!-- container-scroller -->
-    <!-- plugins:js -->
-    <script src="{% static 'assets/vendors/js/vendor.bundle.base.js' %}"></script>
-    <script src="{% static 'assets/vendors/js/vendor.bundle.addons.js' %}"></script>
-    <!-- endinject -->    
-    <!-- inject:js -->
-    <script src="{% static 'assets/js/shared/off-canvas.js' %}"></script>
-    <script src="{% static 'assets/js/shared/misc.js' %}"></script>
-    <!-- endinject -->    
-
-
-  </body>
-</html><html>
-    <head></head>
-    <body>
-
-    </body>
-</html>
+    <div class="row">
+        <div class="col-md-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+            <!--<h4 class="card-title mb-0 font-weight-semibold">한국어</h4>-->
+            <div class="d-flex flex-column flex-lg-row">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>일자</th>
+                            <th>목표시간</th>
+                            <th>기도시간</th>
+                            <th>달성률</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for praylog in praylogs %}
+                        <tr>
+                            <td>{{ praylog.date}} </td>
+                            <td>{{ praylog.start_goal }} ~ {{ praylog.end_goal }}</td>
+                            <td>{{ praylog.start }} ~ {{ praylog.end }}</td>
+                            <td>10%</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>            
+    </div>
+    <!-- content-wrapper ends -->
+    <!-- partial:partials/_footer.html -->
+    <footer class="footer">
+    <div class="container-fluid clearfix">
+        <!--
+        <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2019 <a href="http://www.bootstrapdash.com/" target="_blank">Bootstrapdash</a>. All rights reserved.</span>
+        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i></span>
+        -->
+    </div>
+    </footer>
+    <!-- partial -->
+</div>
+{% endblock %}
