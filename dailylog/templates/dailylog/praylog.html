@@ -1,68 +1,43 @@
 {% extends 'davidproject/index.html' %}
 {% load static %}
 {% block content %}
-<!-- partial -->
-<div class="main-panel">
-    <div class="content-wrapper">
-    <!-- Page Title Header Starts-->
-    <div class="row page-title-header">
-        <div class="col-12">
-            <div class="page-header">
-                <h4 class="page-title">기도 일지</h4>
-            </div>
-        </div>
-        <div class="col-md-12">
-            <div class="page-header-toolbar">
-            <div class="btn-group toolbar-item" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-secondary"><i class="mdi mdi-chevron-left"></i></button>
-                <button type="button" class="btn btn-secondary">2020-04-08</button>
-                <button type="button" class="btn btn-secondary"><i class="mdi mdi-chevron-right"></i></button>
-            </div>
-            </div>
+<div class="row page-title-header">
+    <div class="col-12">
+        <div class="page-header">
+            <h4 class="page-title">기도 일지</h4>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12 grid-margin">
+</div>
+<div class="row">
+    <div class="col-md-12 grid-margin">
         <div class="card">
             <div class="card-body">
-            <!--<h4 class="card-title mb-0 font-weight-semibold">한국어</h4>-->
-            <div class="d-flex flex-column flex-lg-row">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>일자</th>
-                            <th>목표시간</th>
-                            <th>기도시간</th>
-                            <th>달성률</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for praylog in praylogs %}
-                        <tr>
-                            <td>{{ praylog.date}} </td>
-                            <td>{{ praylog.start_goal }} ~ {{ praylog.end_goal }}</td>
-                            <td>{{ praylog.start }} ~ {{ praylog.end }}</td>
-                            <td>10%</td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            </div>
+                <!--<h4 class="card-title mb-0 font-weight-semibold">한국어</h4>-->
+                <div class="d-flex flex-column flex-lg-row">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>일자</th>
+                                <th>목표시간</th>
+                                <th>기도시간</th>
+                                <th>달성률</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for praylog in praylogs %}
+                            <tr>
+                                <td><a href="{% url 'praylog_detail' target_date=praylog.date %}">{{ praylog.date}}</a></td>
+                                <td>{{ praylog.start_goal }} ~ {{ praylog.end_goal }}</td>
+                                <td>{{ praylog.start }} ~ {{ praylog.end }}</td>
+                                <td>10%</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
-        </div>
-    </div>            
     </div>
-    <!-- content-wrapper ends -->
-    <!-- partial:partials/_footer.html -->
-    <footer class="footer">
-    <div class="container-fluid clearfix">
-        <!--
-        <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2019 <a href="http://www.bootstrapdash.com/" target="_blank">Bootstrapdash</a>. All rights reserved.</span>
-        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i></span>
-        -->
-    </div>
-    </footer>
-    <!-- partial -->
-</div>
+</div>            
+
 {% endblock %}
